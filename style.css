@@ -15,6 +15,7 @@
 
 .index-btns-section, .latest-posts {
   background-color: #f8f9fa;
+  padding: 1.5%;
 }
 
 .index-btns-section button {
@@ -76,4 +77,29 @@ table {
     margin-top: 1.5%;
     text-align: center;
   }
+}
+
+/*** Users + Posts + Categories Page ***/
+
+.users-btns-section, .posts-btns-section, .cate-btns-section
+{
+  background-color: #f8f9fa;
+  padding: 1.5%;
+}
+/*** Userss Page ***/
+
+.users-btns-section button {
+  color: black;
+}
+
+/*** Posts Page ***/
+.pagination{
+  margin-top: 2%;
+}
+.posts-btns-section button{
+  color: white;
+}
+/*** Categories Page ***/
+.cate-btns-section button{
+  color: white;
 }

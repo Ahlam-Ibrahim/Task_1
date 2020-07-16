@@ -30,13 +30,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Posts</a>
+            <a class="nav-link" href="posts.html">Posts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="categories.html">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
+            <a class="nav-link" href="users.html">Users</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -133,21 +133,21 @@
           <div class="card-body">
             <h2 class="card-title">Posts</h2>
             <div class="card-text"><i class="fa fa-pencil fa-4x"></i></div>
-            <button class="btn btn-primary">View</button>
+            <button class="btn btn-primary" onclick="window.location.href = 'posts.html'">View</button>
           </div>
         </div>
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">Categories</h2>
             <div class="card-text"><i class="fa fa-folder fa-4x"></i></div>
-            <button class="btn btn-success">View</button>
+            <button class="btn btn-success" onclick="window.location.href = 'categories.html'">View</button>
           </div>
         </div>
         <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">Users</h2>
             <div class="card-text"><i class="fa fa-user fa-4x"></i></div>
-            <button class="btn btn-warning">View</button>
+            <button class="btn btn-warning" onclick="window.location.href = 'users.html'">View</button>
           </div>
         </div>
       </div>
@@ -178,9 +178,9 @@
             </div>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" class="custom-file-input">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                <small class="form-text text-muted">Max Size 3mb</small>
+                <input type="file" class="custom-file-input" id="postFile">
+                <label class="custom-file-label" for="postFile">Choose file</label>
+                <small class="form-textd">Max Size 3mb</small>
               </div>
             </div>
             <label for="postBody">Body</label>
@@ -200,6 +200,7 @@
           </div>
         </div>
       </div>
+    </div>
       <!-- Modal#2 Category -->
       <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
