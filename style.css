@@ -52,6 +52,11 @@ table {
   border-radius: 2%;
 }
 
+/*** Modals Section ***/
+.modal-header {
+  color: white;
+}
+
 /*** Footer Section ***/
 .footer {
   text-align: center;
