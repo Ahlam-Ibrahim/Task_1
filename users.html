@@ -17,8 +17,26 @@
   <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-</head>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <script>
+  $(document).ready(function() {
+    var i, counterU = 0;
+    for (i = 1; i <= localStorage.clickcount; i++) {
+      var storedVar = localStorage.getItem(i);
+      if (storedVar.startsWith("u")) {
+        counterU++;
+        storedVar = storedVar.replace(storedVar.charAt(0), "");
+        var userObj = JSON.parse(storedVar);
+        //var numberOfImages = 15;
+        var $container = $("#repeatU");
+        $container.append('<tr></tr><th>' + counterU + '</th><td>' + userObj.name + '</td><td>' + userObj.email +
+          '</td><td> <button type = "button" class = "btn btn-secondary"> <i class = "fa fa-angle-double-right"> </i>Details</button> </td></tr>');
+        localStorage.setItem(i, "u" + JSON.stringify(userObj));
+      }
+    }
+  });
+  </script>
 <body>
   <!-- Navigation Bar Section -->
   <header>
@@ -64,9 +82,9 @@
         </div>
         <div class="col-md-6">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username">
+            <input type="text" class="form-control" placeholder="Search Users..">
             <div class="input-group-append">
-          <button class="btn btn-outline-secondary bg-warning" type="button" placeholder="Search Users..">Search</button>
+          <button class="btn btn-outline-secondary bg-warning" type="button">Search</button>
             </div>
             </div>
         </div>
@@ -75,53 +93,17 @@
     <!-- Table Section -->
     <div class="table-section">
         <div class="latest-posts">
-          <table class="table">
+          <table class="table" id="repeatU">
             <h3>Latest Users</h3>
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
         </div>

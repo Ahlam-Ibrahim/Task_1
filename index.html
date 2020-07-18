@@ -17,6 +17,8 @@
   <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  <!-- Script --->
+  <script src="script.js"></script>
 </head>
 
 <body>
@@ -176,31 +178,34 @@
                 <option>Health & Wellness</option>
               </select>
             </div>
+            <div>
+             <label for="postImage">Upload Image</label></div>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="postFile">
-                <label class="custom-file-label" for="postFile">Choose file</label>
-                <small class="form-textd">Max Size 3mb</small>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="postImage">
+      <label class="custom-file-label" for="postImage">Choose file</label>
+    </div>
+  </div>
+  <small class="form-text text-muted add-small">Max Size 3Mb</small>
+              <label for="postBody">Body</label>
+              <div id="editor">This is some sample content.</div>
+              <script>
+                ClassicEditor
+                  .create(document.querySelector('#editor'))
+                  .then(editor => {
+                    console.log(editor);
+                  })
+                  .catch(error => {
+                    console.error(error);
+                  });
+              </script>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
-            </div>
-            <label for="postBody">Body</label>
-            <script>
-                    ClassicEditor
-                    .create( document.querySelector( '#editor' ) )
-                            .then( editor => {
-                                    console.log( editor );
-                            } )
-                            .catch( error => {
-                                    console.error( error );
-                            } );
-            </script>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
       <!-- Modal#2 Category -->
       <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -213,10 +218,10 @@
             </div>
             <div class="modal-body form-group">
               <label for="categoryTitle">Title</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" id="catTitle" value=""/>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Save changes</button>
+              <button type="button" class="btn btn-success" onclick="addCategory()">Save changes</button>
             </div>
           </div>
         </div>
@@ -234,11 +239,11 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="userName">Name</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" id="userName" />
               </div>
               <div class="form-group">
                 <label for="userEmail">Email</label>
-                <input type="email" class="form-control" />
+                <input type="email" class="form-control" id="email"/>
               </div>
               <div class="form-group">
                 <label for="pswd">Password</label>
@@ -250,7 +255,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning">Save changes</button>
+              <button type="button" class="btn btn-warning" onclick="addUser()">Save changes</button>
             </div>
           </div>
         </div>

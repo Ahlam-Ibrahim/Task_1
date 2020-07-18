@@ -3,6 +3,11 @@
   margin: 7px;
 }
 
+small{
+  margin-top: -1.5%;
+  margin-bottom: 1.5%;
+}
+
 .index-banner {
   background-color: #007bff;
   color: white;
@@ -13,7 +18,7 @@
   display: inline;
 }
 
-.index-btns-section, .latest-posts {
+.index-btns-section, .latest-posts, .edit-post{
   background-color: #f8f9fa;
   padding: 1.5%;
 }
@@ -24,15 +29,21 @@
 }
 
 /*** Table Section ***/
-.table-section {
+.table-section, .edit-post{
   margin: 3%;
+  margin-bottom: 0% !important;
 }
 
-.latest-posts {
+.latest-posts, .edit-post {
   border: solid 0.3px grey;
   padding: 2%;
 }
 
+.edit-post {
+  background-color: white;
+  margin-top: 0% !important;
+  margin-bottom: 3% !important;
+}
 table {
   margin-top: 3%;
 }
@@ -79,12 +90,16 @@ table {
   }
 }
 
-/*** Users + Posts + Categories Page ***/
+/*** Users + Posts + Categories Page + postPage ***/
 
-.users-btns-section, .posts-btns-section, .cate-btns-section
+.users-btns-section, .posts-btns-section, .cate-btns-section, .postPage-btns-section
 {
   background-color: #f8f9fa;
   padding: 1.5%;
+}
+.posts-btns-section button, .cate-btns-section button, .postPage-btns-section button{
+  color: white;
+  width: 100%;
 }
 /*** Userss Page ***/
 
@@ -96,10 +111,9 @@ table {
 .pagination{
   margin-top: 2%;
 }
-.posts-btns-section button{
-  color: white;
-}
-/*** Categories Page ***/
-.cate-btns-section button{
-  color: white;
+
+/*** postPage Section ***/
+.back-link{
+  color: grey;
+  text-align: center;
 }
