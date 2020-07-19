@@ -165,7 +165,6 @@
               <textarea name="content" id="editor">
         &lt;p&gt;This is some sample content.&lt;/p&gt;
     </textarea>
-              <!--<p><input type="submit" value="Submit"></p>-->
               <script>
                 let editor;
 
@@ -179,7 +178,7 @@
                   });
               </script>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="addPost()">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="addPost()" data-dismiss="modal">Save changes</button>
               </div>
             </form>
           </div>
@@ -201,7 +200,7 @@
             <input type="text" class="form-control" id="catTitle" value="" />
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" onclick="addCategory()">Save changes</button>
+            <button type="button" class="btn btn-success" onclick="addCategory()" data-dismiss="modal">Save changes</button>
           </div>
         </div>
       </div>
@@ -235,7 +234,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-warning" onclick="addUser()">Save changes</button>
+            <button type="button" class="btn btn-warning" onclick="addUser()" data-dismiss="modal">Save changes</button>
           </div>
         </div>
       </div>
@@ -277,7 +276,7 @@
           localStorage.setItem(i, "p" + JSON.stringify(post));
         }
       }
-      //Fill the cards
+      //Filling the cards
       document.getElementById('categoryNum').innerHTML = localStorage.getItem("categoryNum");
       document.getElementById('postNum').innerHTML = localStorage.getItem("postNum");
       document.getElementById('userNum').innerHTML = localStorage.getItem("userNum");

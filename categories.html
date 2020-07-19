@@ -116,7 +116,6 @@
               counterC++;
               storedVar = storedVar.replace(storedVar.charAt(0), "");
               var categoryObject = JSON.parse(storedVar);
-              //var numberOfImages = 15;
               var $container = $("#repeatC");
               $container.append('<tr><th>' + counterC + '</th><td>' + categoryObject.title + '</td><td>' + categoryObject.date +
                 '</td><td> <button type = "button" class = "btn btn-secondary"> <i class = "fa fa-angle-double-right"> </i>Details</button> </td></tr>');

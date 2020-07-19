@@ -17,7 +17,6 @@ function addCategory() {
     localStorage.clickcount = 1;
     localStorage.setItem(1, "c" + JSON.stringify(category));
   }
-  window.location.href = "categories.html";
 }
 
 function addUser() {
@@ -35,7 +34,6 @@ function addUser() {
     localStorage.clickcount = 1;
     localStorage.setItem(1, "u" + JSON.stringify(userObj));
   }
-  window.location.href = "users.html";
 }
 
 function addPost() {
@@ -59,13 +57,11 @@ function addPost() {
     localStorage.clickcount = 1;
     localStorage.setItem(1, "p" + JSON.stringify(post));
   }
-  window.location.href = "posts.html";
 }
 
 
 function edit(i) {
   localStorage.setItem("postKey", i);
-  window.location.href = "postPage.html";
 }
 
 function editContent() {
@@ -86,3 +82,8 @@ function editContent() {
     }
   }
 }
+/*
+function deletePost(){
+  alert("ll");
+
+}*/
