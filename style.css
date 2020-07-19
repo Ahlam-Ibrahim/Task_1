@@ -3,7 +3,7 @@
   margin: 7px;
 }
 
-small{
+small {
   margin-top: -1.5%;
   margin-bottom: 1.5%;
 }
@@ -18,7 +18,7 @@ small{
   display: inline;
 }
 
-.index-btns-section, .latest-posts, .edit-post{
+.index-btns-section, .latest-posts, .edit-post {
   background-color: #f8f9fa;
   padding: 1.5%;
 }
@@ -29,7 +29,7 @@ small{
 }
 
 /*** Table Section ***/
-.table-section, .edit-post{
+.table-section, .edit-post {
   margin: 3%;
   margin-bottom: 0% !important;
 }
@@ -44,6 +44,7 @@ small{
   margin-top: 0% !important;
   margin-bottom: 3% !important;
 }
+
 table {
   margin-top: 3%;
 }
@@ -64,9 +65,18 @@ table {
   border-radius: 2%;
 }
 
+.card h2 {
+  display: inline;
+}
+
 /*** Modals Section ***/
 .modal-header {
   color: white;
+}
+
+#repeatP a, #reapetP2 a {
+  color: blue;
+  text-decoration: underline;
 }
 
 /*** Footer Section ***/
@@ -75,6 +85,7 @@ table {
   size: 20px;
   color: white;
   padding: 3%;
+  margin-top: 5%;
 }
 
 /*** Responsive Styling Section ***/
@@ -91,29 +102,28 @@ table {
 }
 
 /*** Users + Posts + Categories Page + postPage ***/
-
-.users-btns-section, .posts-btns-section, .cate-btns-section, .postPage-btns-section
-{
+.users-btns-section, .posts-btns-section, .cate-btns-section, .postPage-btns-section {
   background-color: #f8f9fa;
   padding: 1.5%;
 }
-.posts-btns-section button, .cate-btns-section button, .postPage-btns-section button{
+
+.posts-btns-section button, .cate-btns-section button, .postPage-btns-section button {
   color: white;
   width: 100%;
 }
-/*** Userss Page ***/
 
+/*** Userss Page ***/
 .users-btns-section button {
   color: black;
 }
 
 /*** Posts Page ***/
-.pagination{
+.pagination {
   margin-top: 2%;
 }
 
 /*** postPage Section ***/
-.back-link{
+.back-link {
   color: grey;
   text-align: center;
 }

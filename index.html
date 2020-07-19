@@ -17,8 +17,9 @@
   <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Script --->
-  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -78,53 +79,18 @@
     <div class="row table-section">
       <div class="col-md-9">
         <div class="latest-posts">
-          <table class="table">
+          <table class="table" id="reapetP2">
             <h3>Latest Posts</h3>
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -134,21 +100,32 @@
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">Posts</h2>
-            <div class="card-text"><i class="fa fa-pencil fa-4x"></i></div>
+            <div class="card-text"><i class="fa fa-pencil fa-4x"></i>
+              <h2 id="postNum">
+              </h2>
+            </div>
+
             <button class="btn btn-primary" onclick="window.location.href = 'posts.html'">View</button>
           </div>
         </div>
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">Categories</h2>
-            <div class="card-text"><i class="fa fa-folder fa-4x"></i></div>
+            <div class="card-text"><i class="fa fa-folder fa-4x"></i>
+              <h2 id="categoryNum">
+              </h2>
+            </div>
             <button class="btn btn-success" onclick="window.location.href = 'categories.html'">View</button>
           </div>
         </div>
         <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">Users</h2>
-            <div class="card-text"><i class="fa fa-user fa-4x"></i></div>
+            <div class="card-text"><i class="fa fa-user fa-4x"></i>
+              <h2 id="userNum">
+              </h2>
+            </div>
+
             <button class="btn btn-warning" onclick="window.location.href = 'users.html'">View</button>
           </div>
         </div>
@@ -159,6 +136,81 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-primary">
+            <h5 class="modal-title">Add Post</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="[URL]" method="post">
+              <div class="form-group">
+                <label for="postTitle">Title</label>
+                <input type="text" class="form-control" id="postTitle" />
+              </div>
+              <div class="form-group">
+                <label for="postCategory">Category</label>
+                <select class="form-control slectCategory" id="postCategory">
+                </select>
+              </div>
+              <div>
+                <label for="postImage">Upload Image</label></div>
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="postImage">
+                  <label class="custom-file-label" for="postImage">Choose file</label>
+                </div>
+              </div>
+              <small class="form-text text-muted add-small">Max Size 3Mb</small>
+              <label for="postBody">Body</label>
+              <textarea name="content" id="editor">
+        &lt;p&gt;This is some sample content.&lt;/p&gt;
+    </textarea>
+              <!--<p><input type="submit" value="Submit"></p>-->
+              <script>
+                let editor;
+
+                ClassicEditor
+                  .create(document.querySelector('#editor'))
+                  .then(newEditor => {
+                    editor = newEditor;
+                  })
+                  .catch(error => {
+                    console.error(error);
+                  });
+              </script>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="addPost()">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal#2 Category -->
+    <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-success">
+            <h5 class="modal-title">Add Category</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body form-group">
+            <label for="categoryTitle">Title</label>
+            <input type="text" class="form-control" id="catTitle" value="" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" onclick="addCategory()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal#3 User -->
+    <div class="modal fade" id="UserModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
             <h5 class="modal-title">Add User</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -166,100 +218,28 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="postTitle">Title</label>
-              <input type="text" class="form-control" />
+              <label for="userName">Name</label>
+              <input type="text" class="form-control" id="userName" />
             </div>
             <div class="form-group">
-              <label for="postCategory">Category</label>
-              <select class="form-control">
-                <option>Web Development</option>
-                <option>Tech Gadgets</option>
-                <option>Bussiness</option>
-                <option>Health & Wellness</option>
-              </select>
+              <label for="userEmail">Email</label>
+              <input type="email" class="form-control" id="email" />
             </div>
-            <div>
-             <label for="postImage">Upload Image</label></div>
-            <div class="input-group mb-3">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="postImage">
-      <label class="custom-file-label" for="postImage">Choose file</label>
+            <div class="form-group">
+              <label for="pswd">Password</label>
+              <input type="password" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="confPswd">Confirm Password</label>
+              <input type="password" class="form-control" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" onclick="addUser()">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <small class="form-text text-muted add-small">Max Size 3Mb</small>
-              <label for="postBody">Body</label>
-              <div id="editor">This is some sample content.</div>
-              <script>
-                ClassicEditor
-                  .create(document.querySelector('#editor'))
-                  .then(editor => {
-                    console.log(editor);
-                  })
-                  .catch(error => {
-                    console.error(error);
-                  });
-              </script>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal#2 Category -->
-      <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-success">
-              <h5 class="modal-title">Add Category</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body form-group">
-              <label for="categoryTitle">Title</label>
-              <input type="text" class="form-control" id="catTitle" value=""/>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success" onclick="addCategory()">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal#3 User -->
-      <div class="modal fade" id="UserModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-warning">
-              <h5 class="modal-title">Add User</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="userName">Name</label>
-                <input type="text" class="form-control" id="userName" />
-              </div>
-              <div class="form-group">
-                <label for="userEmail">Email</label>
-                <input type="email" class="form-control" id="email"/>
-              </div>
-              <div class="form-group">
-                <label for="pswd">Password</label>
-                <input type="password" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label for="confPswd">Confirm Password</label>
-                <input type="password" class="form-control" />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-warning" onclick="addUser()">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
   </main>
   <!-- Footer Section -->
 
@@ -270,7 +250,40 @@
       </p>
     </div>
   </footer>
+  <script>
+    $(document).ready(function() {
+      var i, counterC = 0;
+      for (i = 1; i <= localStorage.clickcount; i++) {
+        var storedVar = localStorage.getItem(i);
+        if (storedVar.startsWith("c")) {
+          counterC++;
+          storedVar = storedVar.replace(storedVar.charAt(0), "");
+          var categoryObject = JSON.parse(storedVar);
+          var $container = $(".slectCategory");
+          $container.append('<option>' + categoryObject.title + '</option>');
+          localStorage.setItem(i, "c" + JSON.stringify(categoryObject));
+        }
+      }
+      var i, counterP = 0;
+      for (i = 1; i <= localStorage.clickcount; i++) {
+        var storedVar = localStorage.getItem(i);
+        if (storedVar.startsWith("p")) {
+          counterP++;
+          storedVar = storedVar.replace(storedVar.charAt(0), "");
+          var post = JSON.parse(storedVar);
+          var $container = $("#reapetP2");
+          $container.append('<tr><th>' + counterP + '</th><td><a onclick="edit(' + i + ')">' + post.title + '</a></td><td>' + post.category +
+            '</td><td>' + post.date + '</td><td><button type = "button" class = "btn btn-secondary"><i class = "fa fa-angle-double-right"></i>Details</button></td></tr>');
+          localStorage.setItem(i, "p" + JSON.stringify(post));
+        }
+      }
+      document.getElementById('categoryNum').innerHTML = localStorage.getItem("categoryNum");
+      document.getElementById('postNum').innerHTML = localStorage.getItem("postNum");
+      document.getElementById('userNum').innerHTML = localStorage.getItem("userNum");
+  });
+      </script>
   <!-- Optional JavaScript -->
+  <script src="script.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
