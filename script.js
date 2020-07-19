@@ -62,10 +62,11 @@ function addPost() {
 
 function edit(i) {
   localStorage.setItem("postKey", i);
+  window.location.href = "postPage.html";
 }
 
 function editContent() {
-  if (localStorage.getItem("postKey")) {
+    if (localStorage.getItem("postKey")) {
     var i = localStorage.getItem("postKey");
     editpost = localStorage.getItem(i);
     editpost = editpost.replace(editpost.charAt(0), "");
@@ -82,8 +83,21 @@ function editContent() {
     }
   }
 }
-/*
-function deletePost(){
-  alert("ll");
 
-}*/
+function savePost(){
+  if (localStorage.getItem("postKey")) {
+    var i = localStorage.getItem("postKey");
+    editpost = localStorage.getItem(i);
+    editpost = editpost.replace(editpost.charAt(0), "");
+    editpost = JSON.parse(editpost);
+    editpost.title =  document.getElementById("editTitle").value;
+    editpost.category = document.getElementById("editCategory").value;
+    editpost.date = new Date();
+    editpost.date = editpost.date.toLocaleString('default', {
+      month: 'short'
+    }) + " " + editpost.date.getDate() + " " + editpost.date.getFullYear();
+    //setItem post in the localStorage
+    localStorage.setItem(i, "p" + JSON.stringify(editpost));
+}
+window.location.href = 'posts.html';
+}

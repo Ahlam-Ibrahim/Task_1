@@ -112,6 +112,7 @@
             counterU++;
             storedVar = storedVar.replace(storedVar.charAt(0), "");
             var userObj = JSON.parse(storedVar);
+            //var numberOfImages = 15;
             var $container = $("#repeatU");
             $container.append('<tr><td>' + counterU + '</td><td>' + userObj.name + '</td><td>' + userObj.email +
               '</td><td> <button type = "button" class = "btn btn-secondary"> <i class = "fa fa-angle-double-right"> </i>Details</button> </td></tr>');

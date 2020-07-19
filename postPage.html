@@ -74,7 +74,7 @@
         </div>
         <div class="col-md-3">
           <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary bg-danger" onclick="deletePost()"><i class="fa fa-trash"></i>Delete Post</button>
+            <button type="button" class="btn btn-outline-secondary bg-danger"><i class="fa fa-trash"></i>Delete Post</button>
           </div>
         </div>
         <div class="col-md-3">
@@ -108,14 +108,14 @@
       </div>
       <small class="form-text text-muted edit-small">Max Size 3Mb</small>
       <label for="postBody">Body</label>
-      <textarea name="content" id="editor">
-&lt;p&gt;This is some sample content.&lt;/p&gt;
-</textarea>
+      <textarea id="editor1" placeholder="">
+           </textarea>
+
       <script>
         let editor;
 
         ClassicEditor
-          .create(document.querySelector('#editor'))
+          .create(document.querySelector('#editor1'))
           .then(newEditor => {
             editor = newEditor;
           })
@@ -123,6 +123,10 @@
             console.error(error);
           });
       </script>
+
+    </div>
+
+    <!-- Footer Section -->
     <script>
       $(document).ready(function() {
         var i, counterC = 0;
@@ -139,7 +143,6 @@
         }
       });
     </script>
-    <!-- Footer Section -->
     <footer>
       <div class="footer bg-dark">
         <p>

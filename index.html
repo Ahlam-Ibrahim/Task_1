@@ -165,6 +165,7 @@
               <textarea name="content" id="editor">
         &lt;p&gt;This is some sample content.&lt;/p&gt;
     </textarea>
+              <!--<p><input type="submit" value="Submit"></p>-->
               <script>
                 let editor;
 
@@ -276,7 +277,7 @@
           localStorage.setItem(i, "p" + JSON.stringify(post));
         }
       }
-      //Filling the cards
+      //Fill the cards
       document.getElementById('categoryNum').innerHTML = localStorage.getItem("categoryNum");
       document.getElementById('postNum').innerHTML = localStorage.getItem("postNum");
       document.getElementById('userNum').innerHTML = localStorage.getItem("userNum");
