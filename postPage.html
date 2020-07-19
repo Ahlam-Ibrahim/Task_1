@@ -69,7 +69,7 @@
         </div>
         <div class="col-md-3">
           <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary bg-success"><i class="fa fa-check"></i>Save Changes</button>
+            <button type="button" class="btn btn-outline-secondary bg-success" onclick="savePost()"><i class="fa fa-check"></i>Save Changes</button>
           </div>
         </div>
         <div class="col-md-3">
@@ -108,12 +108,15 @@
       </div>
       <small class="form-text text-muted edit-small">Max Size 3Mb</small>
       <label for="postBody">Body</label>
-      <div id="editor123"></div>
+      <div id="editor1"></div>
+      <!--<p><input type="submit" value="Submit"></p>-->
       <script>
+        let editor;
+
         ClassicEditor
-          .create(document.querySelector('#editor123'))
-          .then(editor => {
-            console.log(editor);
+          .create(document.querySelector('#editor1'))
+          .then(newEditor => {
+            editor = newEditor;
           })
           .catch(error => {
             console.error(error);

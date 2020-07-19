@@ -75,8 +75,6 @@ function editContent() {
     editpost = editpost.replace(editpost.charAt(0), "");
     editpost = JSON.parse(editpost);
     document.getElementById("editTitle").placeholder = editpost.title;
-    // document.getElementById("editCategory").selectedIndex  = editpost.category;
-    // localStorage.setItem("category",editpost.category);
     var val = editpost.category;
     var sel = document.getElementById('editCategory');
     var opts = sel.options;
