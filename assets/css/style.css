@@ -1,0 +1,136 @@
+/*** Top Section ***/
+html, body {
+  height: 100%;
+  position: relative;
+}
+
+/* Header Section */
+header nav a {
+  margin-right: 10px;
+}
+
+/* font-awesome Styling */
+.fa {
+  margin: 7px;
+}
+
+/* small text under image input styling */
+small {
+  margin-top: -1.5%;
+  margin-bottom: 1.5%;
+}
+
+/* Modals Section */
+.modal-header {
+  color: white;
+}
+
+/***************************/
+/* Top section after header*/
+.top-bg {
+  background-color: #007bff;
+  color: white;
+  padding: 1%;
+}
+
+.top-title {
+  display: inline;
+}
+
+/* Buttons section after top section */
+.btns-section {
+  background-color: #f8f9fa;
+  padding: 1.5%;
+  margin-bottom: 3%;
+}
+
+.btns-section button {
+  color: white;
+  width: 100%;
+}
+
+.btn-primary-outline {
+  /* Transparent button - back to dashboard - */
+  background-color: #f8f9fa;
+  color: black !important;
+}
+
+/* Table Section + Edit Post Section */
+.grey-background, .edit-post {
+  background-color: #f8f9fa;
+  border: solid 0.1px #DCDCDC;
+  padding-top: 0.5%;
+  margin: 2%;
+  margin-bottom: 4%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.edit-post {
+  background-color: white;
+  margin-top: -4%;
+  padding: 1.5%;
+}
+
+.edit-post-title, .table-title {
+  padding: 0% 0 0% 1.5%;
+}
+
+table {
+  margin-top: 2%;
+}
+
+/* Cards Section */
+.cards button {
+  color: white;
+  border: solid 1px white;
+}
+
+.card {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  margin: 0 2% 2% 2%;
+  border-radius: 2%;
+}
+
+.card h2 {
+  display: inline;
+}
+
+/* pagination - under the table in post.html */
+.pagination {
+  margin-top: 2%;
+}
+
+/* wrapping content to keep the footer down */
+#content-wrap {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  padding: 2%;
+  width: 100%;
+}
+
+/* Responsive Style Section */
+@media only screen and (max-width: 950px) {
+  .btns-section button {
+    width: 100%;
+    margin: 2%;
+  }
+
+  .card {
+    margin-top: 1.5%;
+    text-align: center;
+  }
+}
